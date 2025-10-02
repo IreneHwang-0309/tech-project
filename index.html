@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的插畫與手帳生活 | 高中生作品集</title>
+    <!-- 載入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 設定 Inter 字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* 使用者偏好字體 */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* 淺色水藍色到白色漸變背景 */
+            background: linear-gradient(135deg, #E0F7FA 0%, #FFFFFF 50%, #B3E5FC 100%);
+            min-height: 100vh;
+        }
+
+        /* 自定義按鈕動畫 */
+        .link-button {
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        }
+        .link-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 191, 255, 0.4); /* Sky Blue Shadow */
+        }
+
+        /* 脈動動畫用於頭像，模擬動態風格 */
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 191, 255, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(0, 191, 255, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 191, 255, 0); }
+        }
+        .avatar-pulse {
+            animation: pulse 2s infinite cubic-bezier(0.66, 0.0, 0.0, 1);
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8 flex items-center justify-center">
+
+    <!-- 主容器：置中並限制寬度以適應 RWD -->
+    <div class="w-full max-w-xl">
+
+        <!-- 個人資訊與連結區塊 (卡片設計) -->
+        <div class="bg-white shadow-2xl rounded-2xl p-6 sm:p-8 mb-8 border-4 border-sky-400 relative overflow-hidden">
+            
+            <!-- 裝飾：水藍色緞帶蝴蝶結 (SVG) -->
+            <svg class="absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 -mt-2 -mr-2 text-sky-500 transform rotate-12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <!-- 簡單的蝴蝶結形狀 -->
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.5 13.5c-.3.3-.78.3-1.08 0l-3.25-3.25L7.8 15.5c-.3.3-.78.3-1.08 0s-.3-.78 0-1.08l3.25-3.25L6.72 8.35c-.3-.3-.3-.78 0-1.08s.78-.3 1.08 0l3.25 3.25 3.25-3.25c.3-.3.78-.3 1.08 0s.3.78 0 1.08l-3.25 3.25 3.25 3.25c.3.3.3.78 0 1.08z"/>
+                <!-- 緞帶元素 -->
+                <path fill="#00BFFF" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 10l-5 5-5-5h3V7h4v5h3z"/>
+                <path fill="#81D4FA" d="M12 17l-3-3h6l-3 3zM12 7l3 3h-6l3-3z"/>
+            </svg>
+
+            <!-- 裝飾：黑貓剪影 (SVG) -->
+            <svg class="absolute bottom-0 left-0 w-16 h-16 sm:w-20 sm:h-20 -mb-2 -ml-2 text-gray-800 transform -rotate-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <!-- 簡化的黑貓剪影，代表您的喜愛 -->
+                <path d="M16 18H8c-1.1 0-2-.9-2-2v-3c0-1.1.9-2 2-2h1.5l.5-1.5C10.33 8.5 11 7.2 12 6c1 1.2 1.67 2.5 2 4l.5 1.5H16c1.1 0 2 .9 2 2v3c0 1.1-.9 2-2 2zM12 4a3 3 0 100 6 3 3 0 000-6z"/>
+                <circle cx="12" cy="7" r="2.5" fill="#1F2937"/>
+            </svg>
+
+            <!-- 頭像與標題 -->
+            <div class="flex flex-col items-center mb-6">
+                <!-- 頭像 (使用 Placeholder) -->
+                <!-- UPDATED: 更改為黑貓主題的佔位符圖片 -->
+                <img src="https://placehold.co/128x128/1F2937/FFFFFF?text=黑貓" alt="黑貓頭像/Logo"
+                     class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-sky-400 avatar-pulse">
+                
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-1">
+                    手帳本裡的魔法師
+                </h1>
+                <p class="text-lg text-sky-600 font-medium">
+                    插畫 | 水彩 | 動漫 | RWD愛好者 (高中生)
+                </p>
+            </div>
+
+            <!-- 社群/作品連結區塊 (Linktree風格) -->
+            <div class="space-y-4">
+                <!-- IG 連結 (最重要的，放在最上面) -->
+                <a href="https://www.instagram.com/your_ig_handle" target="_blank" class="link-button flex items-center justify-center p-4 bg-pink-500 text-white rounded-xl font-bold text-xl shadow-lg hover:bg-pink-600">
+                    <!-- Instagram Icon -->
+                    <svg class="w-6 h-6 mr-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    追蹤我的 IG 作品集
+                </a>
+
+                <!-- GitHub 連結 -->
+                <a href="https://github.com/your_github" target="_blank" class="link-button flex items-center justify-center p-4 bg-gray-800 text-white rounded-xl font-bold text-lg shadow-lg hover:bg-gray-900">
+                    <!-- GitHub Icon -->
+                    <svg class="w-6 h-6 mr-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.862 8.16 6.84 9.49.5.09.68-.21.68-.48v-1.74c-2.78.6-3.37-.95-3.37-.95-.45-1.15-1.11-1.46-1.11-1.46-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.88 1.52 2.3 1.08 2.87.83.09-.64.34-1.08.62-1.33-2.2-.25-4.51-1.1-4.51-4.9A3.83 3.83 0 017.5 7.03c.1-.25.42-1.24-.1-2.58 0 0 .82-.26 2.7.98A9.85 9.85 0 0112 5.58c.85 0 1.7.11 2.5.32 1.88-1.24 2.7-.98 2.7-.98-.52 1.34-.2 2.33-.1 2.58a3.83 3.83 0 011.03 2.62c0 3.79-2.31 4.64-4.52 4.9.35.3.67.92.67 1.85v2.75c0 .27.18.57.68.48A10.003 10.003 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
+                    GitHub (程式碼筆記)
+                </a>
+
+                <!-- Email 連結 -->
+                <a href="mailto:your.email@example.com" target="_blank" class="link-button flex items-center justify-center p-4 bg-sky-500 text-white rounded-xl font-bold text-lg shadow-lg hover:bg-sky-600">
+                    <!-- Mail Icon -->
+                    <svg class="w-6 h-6 mr-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    Email 聯絡我
+                </a>
+
+                <!-- LinkedIn 連結 (可選，用於專業交流) -->
+                <a href="https://www.linkedin.com/in/your_linkedin" target="_blank" class="link-button flex items-center justify-center p-4 bg-blue-700 text-white rounded-xl font-bold text-lg shadow-lg hover:bg-blue-800">
+                    <!-- LinkedIn Icon -->
+                    <svg class="w-6 h-6 mr-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.485c0-1.306-.026-2.986-1.815-2.986-1.819 0-2.093 1.423-2.093 2.887v5.584h-3.554V9.29h3.416v1.561h.048c.475-.898 1.638-1.84 3.376-1.84 3.606 0 4.267 2.368 4.267 5.44V20.452zM4.337 7.954a1.868 1.868 0 01-1.87-1.868c0-1.026.84-1.86 1.87-1.86s1.868.834 1.87 1.86c.002 1.026-.838 1.868-1.87 1.868zM5.52 9.29h-2.36V20.452h2.36V9.29z"/></svg>
+                    LinkedIn (專業交流)
+                </a>
+            </div>
+        </div>
+
+        <!-- 藝術作品展示區塊 (水彩畫) -->
+        <div class="bg-sky-100 shadow-xl rounded-2xl p-6 sm:p-8 border-l-8 border-sky-600">
+            <h2 class="text-2xl sm:text-3xl font-bold text-sky-800 mb-4 flex items-center">
+                <!-- 畫筆 Icon -->
+                <svg class="w-7 h-7 mr-2 text-sky-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-1.5"></path><path d="M2 17l10-10"></path></svg>
+                最新水彩插畫展示
+            </h2>
+            
+            <p class="text-gray-700 mb-4">
+                這是我的最新一幅水彩創作，主要嘗試了天空與黑貓的結合。歡迎點擊下方按鈕欣賞更多作品！
+            </p>
+
+            <!-- 水彩畫作品展示 (Placeholder Image) -->
+            <div class="relative w-full aspect-video rounded-xl overflow-hidden mb-4 shadow-md group">
+                <img src="https://placehold.co/800x450/00BFFF/FFFFFF?text=Watercolour+Art+Placeholder" 
+                     alt="最新水彩畫作品" 
+                     class="w-full h-full object-cover transition duration-300 ease-in-out group-hover:scale-105">
+                
+                <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                    <p class="text-white text-xl font-semibold">點擊前往完整作品集</p>
+                </div>
+            </div>
+
+            <!-- 連結到 IG 作品集按鈕 -->
+            <a href="https://www.instagram.com/your_ig_handle" target="_blank" class="link-button w-full flex items-center justify-center p-3 bg-sky-600 text-white rounded-lg font-bold shadow-lg hover:bg-sky-700">
+                前往 IG 瀏覽我的藝術作品集
+            </a>
+        </div>
+
+        <!-- 頁尾聲明 (選用) -->
+        <p class="text-center text-gray-500 text-sm mt-8">
+            感謝您的到訪！<br>
+            這是一個專屬於我的數位畫板與連結中心。
+        </p>
+
+    </div>
+</body>
+</html>
